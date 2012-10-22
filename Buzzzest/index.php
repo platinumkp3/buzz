@@ -35,8 +35,5 @@ Become a Buzzzest today! <a href="signup.php" >Sign Up1</a> || <a href="signup2.
 </tr>
 </table>
 </form>
-
-
-
 </body>
 </html>
