@@ -3,8 +3,8 @@
 
 body
 {
-	width:100%;
-	height:100%;
+	/*width:100%;
+	height:100%;*/
 }
 
 #divborder
@@ -13,6 +13,6 @@ body
 }
 #header
 {
-border-bottom:1px solid #000;
+	border-bottom:1px solid #000;
 }
 

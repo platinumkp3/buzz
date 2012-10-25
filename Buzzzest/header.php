@@ -15,5 +15,6 @@
   <input type="text" value="Search" />
 	
   <a href="home.php">Home</a> <a href="profile.php" >Profile</a>  <a href="QandAns.php" >Q & A</a>  
-   <a href="Blog.php" >Blog</a> <a href="message.php" >Messages</a> <a href="job.php" >Job</a>     
+   <a href="Blog.php" >Blog</a> <a href="message.php" >Messages</a> <a href="job.php" >Job</a>   
+   <a href="logout.php">Logout</a>  
     <!-- end .header --></div>

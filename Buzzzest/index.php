@@ -4,14 +4,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./css/main.css" type="text/css"/>
 <title>Buzzzest</title>
+<script type="application/javascript" >
+ function chkLogin()
+	 {		
+		if(document.getElementById("username").value=="")
+		{			
+			alert("Enter username");
+			return false;
+		}
+		else if(frmlogin.passwrd.value =="")
+		{
+			alert("Enter Pasword");
+			return false;
+			
+		}
+		else if ( document.getElementById("username").value !="" && frmlogin.passwrd.value !="")
+		{
+			return true;			
+		}
+		
+	 }
+</script>
 </head>
 
 <body>
 	<div id="header" style="border-bottom:1px solid #000;">
-		Become a Buzzzest today! <a href="signup.php" >Sign Up1</a> || 
-		<a href="signup2.php" >Sign Up2</a> || <a href="signup3.php" >Sign Up3</a>
+		Become a Buzzzest today! <a href="signup.php" >Sign Up</a> 
 		<div style="float:right;margin-right:1%;">
-			Alreday a Buzzzest <a href="" >Sign In </a>
+			Alreday a Buzzzest <a href="" >Sign In</a>
 		</div>
 	</div>
 
@@ -25,7 +45,7 @@
 		
 	</div>
 	<div id="sign_in">
-		<form name="frmlogin" id="frmlogin">
+		<form name="frmlogin" id="frmlogin" method="post" action="checkaccount.php" onsubmit="chkLogin();" >
 			<table width="234" height="155" align="right"  cellpadding="0" cellspacing="0">
 				<tr>
 					<td colspan="2">Username</td>
@@ -39,7 +59,7 @@
 					<td colspan="2"><input type="password" name="passwrd" id="passwrd" /></td>
 				</tr>
 				<tr>
-					<td ><input type="submit" name="SignIn"  id="SignIn" /></td><td><a href="" >Forget Password?</a></td>
+					<td ><input type="submit" name="SignIn" id="SignIn" /></td><td><a href="" >Forget Password?</a></td>
 				</tr>
 				<tr>
 
