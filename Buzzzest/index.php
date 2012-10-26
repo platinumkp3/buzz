@@ -3,31 +3,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./css/main.css" type="text/css"/>
+<script src="js/jquery-1.8.2.js" type="application/javascript" >
+</script>
+
 <title>Buzzzest</title>
+
 <script type="application/javascript" >
  function chkLogin()
-	 {		
-		if(document.getElementById("username").value=="")
-		{			
-			alert("Enter username");
+	 {	
+	 	if($("#username").val()== "" )
+		{
+			$("#uname").text("Please Enter User Name");
 			return false;
 		}
-		else if(frmlogin.passwrd.value =="")
+		else if($("#passwrd").val()=="")
 		{
-			alert("Enter Pasword");
+			$("#psswrd").text("Please Enter Password");
 			return false;
-			
-		}
-		else if ( document.getElementById("username").value !="" && frmlogin.passwrd.value !="")
+		}	 
+		else
 		{
-			return true;			
+			return true;
 		}
-		
 	 }
 </script>
 </head>
 
 <body>
+
 	<div id="header" style="border-bottom:1px solid #000;">
 		Become a Buzzzest today! <a href="signup.php" >Sign Up</a> 
 		<div style="float:right;margin-right:1%;">
@@ -36,7 +39,7 @@
 	</div>
 
 	<div style="display:block;float:left;margin-left:35%;margin-top:3%;">
-		<image src="./images/bee2.gif" width="150" height="" style="margin-left:8%;"/><br/>
+		<!--<image src="./images/bee2.gif" width="150" height="" style="margin-left:8%;"/><br/>-->
 		<b style="font-size:45px;margin-left:8%;">Buzzzest</b><br/>
 		<b>Lets Buzz & Zest Your World.</b><br/>
 		<div id="index_search">
@@ -45,7 +48,7 @@
 		
 	</div>
 	<div id="sign_in">
-		<form name="frmlogin" id="frmlogin" method="post" action="checkaccount.php" onsubmit="chkLogin();" >
+		<form name="frmlogin" id="frmlogin" method="post" action="checkaccount.php" onSubmit="return chkLogin();" >
 			<table width="234" height="155" align="right"  cellpadding="0" cellspacing="0">
 				<tr>
 					<td colspan="2">Username</td>
@@ -53,20 +56,32 @@
 				<tr>
 					<td colspan="2"><input type="text"  name="username" id="username" /></td>
 				</tr>
+                <tr>
+					<td colspan="2"><label id="uname" /></td>
+				</tr>
 				<tr>
 					<td colspan="2">Password</td></tr>
 				<tr>
 					<td colspan="2"><input type="password" name="passwrd" id="passwrd" /></td>
 				</tr>
-				<tr>
-					<td ><input type="submit" name="SignIn" id="SignIn" /></td><td><a href="" >Forget Password?</a></td>
+                 <tr>
+					<td colspan="2"><label id="psswrd" /></td>
 				</tr>
 				<tr>
-
+					<td ><input type="submit" value="login" name="SignIn" id="SignIn"  /></td><td><a href="" >Forget Password?</a></td>
+				</tr>
+                
+				<tr>
+				<?php
+					$error=$_REQUEST['error'];
+					if ($error == 1)
+					{ ?>
+						<td colspan="2">Please check your username and password</td>		
+			   <?php }
+					?>
 				</tr>
 			</table>
 		</form>
 	</div>
-	
 </body>
 </html>

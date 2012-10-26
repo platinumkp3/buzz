@@ -1,5 +1,8 @@
 <?php
+session_start();
+include "includes/check_session.php";
 require "header.php";
+
 ?>
   <div class="sidebar1">
     <ul class="nav">

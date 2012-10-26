@@ -41,7 +41,25 @@ $(document).ready(function(){
 			 required: true
 			},
 			
+			fullnme:{
+			 minlength: 4,
+			 required: true
+			},
+			
 			username:{
+			 minlength: 4,
+			 required: true
+			},
+			
+			usrname:{
+			 minlength: 4,
+			 required: true
+			},
+			uname:{
+				minlength: 4,
+			 required: true
+			},
+			name:{
 			 minlength: 4,
 			 required: true
 			},
@@ -51,6 +69,20 @@ $(document).ready(function(){
 	         email: true
 	      },
 		  
+		  description:{
+			  required: true,
+		  },
+		  
+		  email1: {
+	         required: true,
+	         email: true
+	      },
+		  
+		  email2:{
+			  required: true,
+	         email: true
+		  },
+		  
 			password:{
 				required: true,
 				ContainsAtLeastOneDigit: true,
@@ -58,9 +90,34 @@ $(document).ready(function(){
 			
 			},
 			
+			pssword:{
+				required: true,
+				ContainsAtLeastOneDigit: true,
+                ContainsAtLeastOneCapitalLetter: true              
+			},
+			
+			passwrd:{
+				required: true,
+				ContainsAtLeastOneDigit: true,
+                ContainsAtLeastOneCapitalLetter: true               
+			
+			},
+			founded:{
+				digits:true,
+				required: true
+			},
+			
 	      gender: {
 	       required: true
 	      },
+		  
+		  type:{
+			required: true
+		  },
+		  
+		  tagline:{
+			required: true
+		  },
 	     
 	      bird: {	      	
 	        required: true
@@ -80,7 +137,9 @@ $(document).ready(function(){
 		   occupation: {	      	
 	        required: true
 	      },
-		  
+		  mission:{
+			required: true
+		  },
 		  industry: {	      	
 	        required: true
 	      },
@@ -88,15 +147,36 @@ $(document).ready(function(){
 	        minlength: 2,
 	        required: true
 	      },
+		  location:{
+			   required: true
+		  },
+		  specialities:{
+		   required: true
+		  },
+		  
+		  empcount:{
+			  digits:true,
+			 required: true
+		  },
 		  url:{
 			required:true
 		},
+		 url1:{
+			required:true
+		},
+		url2:{
+			required:true
+		},
 		  
-		    terms:
-		  {
-			
-	        required: true 
-		  }
+	  terms: {			
+		required: true 
+	  },
+	  terms1: {			
+		required: true 
+	  },
+	  terms2: {			
+		required: true 
+	  }
 	    },
 	    highlight: function(label) {
 	    	$(label).closest('.control-group').addClass('error');

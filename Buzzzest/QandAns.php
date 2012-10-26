@@ -1,5 +1,8 @@
 <?php
+session_start();
+include "includes/check_session.php";
 require "header.php";
+
 ?>
   <div class="sidebar1">
     <ul class="nav">
@@ -28,6 +31,7 @@ require "header.php";
     </ol>
     <h4>Backgrounds</h4>
     <p>By nature, the background color on any div will only show for the length of the content. This means if you're using a background color or border to create the look of a side column, it won't extend all the way to the footer but will stop when the content ends. If the .content div will always contain more content, you can place a border on the .content div to divide it from the column.</p>
+          <!-- end .content --></div>
 <?php
 require "footer.php";
 ?>

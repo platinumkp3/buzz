@@ -1,4 +1,4 @@
-   <!-- end .content --></div>
+
   <div class="footer">
     <p align="center">&copy; Buzzzest 2012</p>
     <!-- end .footer --></div>

@@ -84,7 +84,7 @@ Lets Buzz & Zest Your World
 					    <div class="control-group">
 					      <label class="control-label" for="email">Email Address</label>
 					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="email" id="email">
+					        <input type="email" class="input-xlarge" name="email" id="email">
 					      </div>
 					    </div>
 					    <div class="control-group">
@@ -180,8 +180,7 @@ Lets Buzz & Zest Your World
 					      <div class="controls">
 					        <input type="url" class="input-xlarge" name="url" id="url">
 					      </div>
-					    </div>
-                        
+					    </div>                        
                               
                          <div class="control-group">
 					      <label class="control-label" for="subject">I agree to the terms of Services</label>
@@ -196,57 +195,140 @@ Lets Buzz & Zest Your World
                          <!-- div2  -->
                       <div id="div2">
 					    <div class="control-group">
-					      <label class="control-label" for="name">Your Name</label>
+					      <label class="control-label" for="name">Name</label>
 					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="name" id="name">
+					        <input type="text" class="input-xlarge" name="fullnme" id="fullnme">
 					      </div>
 					    </div>
+                        
+                          <div class="control-group">
+					      <label class="control-label" for="name">Username</label>
+					      <div class="controls">
+					        <input type="text" class="input-xlarge" name="usrname" id="usrname">
+					      </div>
+					    </div>
+                        
+                        
 					    <div class="control-group">
 					      <label class="control-label" for="email">Email Address</label>
 					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="email1" id="email1">
+					        <input type="email" class="input-xlarge" name="email1" id="email1">
 					      </div>
 					    </div>
 					    <div class="control-group">
-					      <label class="control-label" for="subject">Subject</label>
+					      <label class="control-label" for="subject">Password</label>
 					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="subject" id="subject">
+					        <input type="password" class="input-xlarge" name="passwrd" id="passwrd">
 					      </div>
 					    </div>
 					    <div class="control-group">
-					      <label class="control-label" for="message">Your Message</label>
+					      <label class="control-label" for="message">Description</label>
 					      <div class="controls">
-					        <textarea class="input-xxxlarge" name="message" id="message" rows="3"></textarea>
+					        <textarea class="input-xxxlarge" name="description" id="description" rows="3"></textarea>
 					      </div>
 					    </div>
+                         <div class="control-group">
+					      <label class="control-label" for="subject">Website</label>
+					      <div class="controls">
+					        <input type="url" class="input-xlarge" name="url1" id="url1">
+					      </div>
+					    </div>    
+                         <div class="control-group">
+					      <label class="control-label" for="subject">I agree to the terms of Services</label>
+					      <div class="controls">
+					        <input type="checkbox" class="input-xlarge" name="terms1" id="terms1" checked="checked">
+					      </div>
+					    </div>
+                     
                         </div><!--end of div2 -->                        
                          
                       <div id="div3">
 					    <div class="control-group">
-					      <label class="control-label" for="name">Your Name</label>
+					      <label class="control-label" for="name">Full Name</label>
 					      <div class="controls">
 					        <input type="text" class="input-xlarge" name="name" id="name">
 					      </div>
 					    </div>
+                        
+                        <div class="control-group">
+					      <label class="control-label" for="name">Username</label>
+					      <div class="controls">
+					        <input type="text" class="input-xlarge" name="uname" id="uname">
+					      </div>
+					    </div>
+                        
 					    <div class="control-group">
 					      <label class="control-label" for="email">Email Address</label>
 					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="email2" id="email2">
+					        <input type="email" class="input-xlarge" name="email2" id="email2">
+					      </div>
+					    </div>
+                        
+                        <div class="control-group">
+					      <label class="control-label" for="subject">Password</label>
+					      <div class="controls">
+					        <input type="password" class="input-xlarge" name="pssword" id="pssword">
 					      </div>
 					    </div>
 					    <div class="control-group">
-					      <label class="control-label" for="subject">Subject</label>
-					      <div class="controls">
-					        <input type="text" class="input-xlarge" name="subject" id="subject">
-					      </div>
+					      <label class="control-label" for="subject">Founded</label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="founded" id="founded">
+                          </div>
 					    </div>
+                          <div class="control-group">
+					      <label class="control-label" for="subject">Tagline </label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="tagline" id="tagline">
+                          </div>
+					    </div>
+                         <div class="control-group">
+					      <label class="control-label" for="subject">Type </label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="type" id="type">
+                          </div>
+					    </div>
+                    
 					    <div class="control-group">
-					      <label class="control-label" for="message">Your Message</label>
+					      <label class="control-label" for="message">Mission</label>
 					      <div class="controls">
-					        <textarea class="input-xxxlarge" name="message" id="message" rows="3"></textarea>
+					        <textarea class="input-xxxlarge" name="mission" id="mission" rows="3"></textarea>
 					      </div>
 					    </div>
+                          <div class="control-group">
+					      <label class="control-label" for="subject">Industry </label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="indtry" id="indtry">
+                          </div>
+					    </div>
+                         <div class="control-group">
+					      <label class="control-label" for="subject">Specialities </label>
+					      <div class="controls"> <textarea class="input-xxxlarge" name="specialities" 
+                          id="specialities"></textarea>
+                          </div>
+					    </div>
+                           <div class="control-group">
+					      <label class="control-label" for="subject">Employee Count </label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="empcount" id="empcount">
+                          </div>
+					    </div>
+                        <div class="control-group">
+					      <label class="control-label" for="subject">Location</label>
+					      <div class="controls"> <input type="text" class="input-xlarge" name="location" id="location">
+                          </div>
+					    </div>
+                        
+                         <div class="control-group">
+					      <label class="control-label" for="subject">Website</label>
+					      <div class="controls">
+					        <input type="url" class="input-xlarge" name="url2" id="url2">
+					      </div>
+					    </div>    
+                         <div class="control-group">
+					      <label class="control-label" for="subject">I agree to the terms of Services</label>
+					      <div class="controls">
+					        <input type="checkbox" class="input-xlarge" name="terms2" id="terms2" checked="checked">
+					      </div>
+					    </div>
+                        
                         </div>
+                        
                         
                         
               <div class="form-actions">

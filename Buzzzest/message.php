@@ -1,5 +1,8 @@
 <?php
+session_start();
+include "includes/check_session.php";
 require "header.php";
+
 ?>
   <div class="sidebar1">
     <ul class="nav">
@@ -12,8 +15,9 @@ require "header.php";
     <p>If you would like the navigation along the top, simply move the ul.nav to the top of the page and recreate the styling.</p>
     <!-- end .sidebar1 --></div>
   <div class="content">
-   <div id="divborder"><a href="">Inbox</a>   <a href="">Outbox</a>   <a href="">Create Message</a>   <a href="">Trash</a></div>   
-   <div id="divborder" >&nbsp; <a href="">Report spam </a>  <a href="">Delete </a>  </div>
+   <div id="divborder"><a href="">Inbox</a>&nbsp;&nbsp;<a href="">Outbox</a>&nbsp;&nbsp;<a href="">Create Message</a>   &nbsp;&nbsp;<a href="">Trash</a></div>   
+   <div id="divborder" >&nbsp;&nbsp; <a href="">Report spam </a>&nbsp;&nbsp;  <a href="">Delete </a>  </div>
+      <!-- end .content --></div>
 <?php
 require "footer.php";
 ?>
