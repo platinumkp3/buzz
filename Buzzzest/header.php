@@ -7,6 +7,17 @@
 <link href="css/home.css" type="text/css" rel="stylesheet" />
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 <link href="css/content.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.8.2.js" type="application/javascript" >
+</script>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<link href="css/modalPopLite.css" rel="stylesheet" type="text/css" />
+
+<script src="js/modalPopLite.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>

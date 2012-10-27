@@ -25,7 +25,7 @@ $(document).ready(function() {
    $('#div2').hide("");	
    $('#div3').hide("");	
    $("#div2").css({"dispaly":"none"});
-   $("#div3").css({"dispaly":"none"});   
+   $("#div3").css({"dispaly":"none"});     
  });
  
  function fnselchange()

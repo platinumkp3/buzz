@@ -75,6 +75,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	padding: 10px 0;
 	width: 49.5%;
 	float: left;
+	min-height:600px;
 }
 
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
