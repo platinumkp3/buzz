@@ -39,7 +39,7 @@
 	</div>
 
 	<div style="display:block;float:left;margin-left:35%;margin-top:3%;">
-		<image src="./images/bee2.gif" width="150" height="" style="margin-left:8%;"/><br/>
+		<!--<image src="./images/bee2.gif" width="150" height="" style="margin-left:8%;"/><br/>-->
 		<b style="font-size:45px;margin-left:8%;">Buzzzest</b><br/>
 		<b>Lets Buzz & Zest Your World.</b><br/>
 		<div id="index_search">
@@ -73,6 +73,7 @@
                 
 				<tr>
 				<?php
+				$error='';
 					$error=$_REQUEST['error'];
 					if ($error == 1)
 					{ ?>

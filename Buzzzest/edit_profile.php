@@ -67,12 +67,11 @@ if ($num_info > 0)
 <style type="text/css" >
 
 form.cmxform label.error, label.error {
-
 	color: red;
 	
 	font-style: bold
-
 }
+
 div.error { display: none; }
 
 input {border: 1px solid black; }

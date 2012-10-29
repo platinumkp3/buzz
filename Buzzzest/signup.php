@@ -11,13 +11,13 @@
 		 JavaScript below! 															-->
 
 <!-- jQuery via Google + local fallback, see h5bp.com -->
-	  <script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
 
 <!-- Validate plugin -->
-		<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
     
 <!-- Scripts specific to this page -->
-		<script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 
 <script type="application/javascript" >
@@ -46,8 +46,7 @@ Lets Buzz & Zest Your World
 
 </div>
 <br />
-
-		    <div class="page-header">	 
+    <div class="page-header">	 
 			  
 		    </div>
             <br />
