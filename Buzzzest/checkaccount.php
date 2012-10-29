@@ -23,6 +23,6 @@ if ($num > 0)
 }
 else 
 {
-	header("location:index.php?error=1");
+	header("location:index.php");
 }
 ?>

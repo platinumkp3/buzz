@@ -71,16 +71,16 @@
 					<td ><input type="submit" value="login" name="SignIn" id="SignIn"  /></td><td><a href="" >Forget Password?</a></td>
 				</tr>
                 
-				<tr>
+				<!--<tr>
 				<?php
-				$error='';
+				/*$error='';
 					$error=$_REQUEST['error'];
 					if ($error == 1)
 					{ ?>
 						<td colspan="2">Please check your username and password</td>		
-			   <?php }
+			   <?php } */
 					?>
-				</tr>
+				</tr>-->
 			</table>
 		</form>
 	</div>
