@@ -1,6 +1,4 @@
 // JavaScript Document
-
-
 $(document).ready(function() {
    $('#photos').hide("");	
    $('#blogs').hide("");	
@@ -35,16 +33,13 @@ function fnchangediv(stringval)
    $("#photos").css("display","none");
    $("#blogs").css("display","none");
    $("#info").css("display","none"); 
-   $("#qanda").css("display","none");
-      
+   $("#qanda").css("display","none");      
    $('#'+stringval).css("display","block");
-   
 	
 }
-var xmlhttp = new getXMLObject();	//xmlhttp holds the ajax object
+
 function fninfoenable()
 {
-
   $('#popup-wrapper').css("display","none");	
   $('#infoedit').css("display","none");
   $('#infoeditdis').css("display","block");
@@ -59,57 +54,15 @@ function fninfodisable()
   $("#infoedit").load("view_profile.php");
 }
 
-//code to update profile data
- 
-function getXMLObject()  //XML OBJECT
-{
-   var xmlHttp = false;
-   try {
-     xmlHttp = new ActiveXObject("Msxml2.XMLHTTP")  // For Old Microsoft Browsers
-   }
-   catch (e) {
-     try {
-       xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")  // For Microsoft IE 6.0+
-     }
-     catch (e2) {
-       xmlHttp = false   // No Browser accepts the XMLHTTP Object then false
-     }
-   }
-   if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
-     xmlHttp = new XMLHttpRequest();        //For Mozilla, Opera Browsers
-   }
-   return xmlHttp;  // Mandatory Statement returning the ajax object created
-}
-
-function handleServerResponse() {
-	
-   if (xmlhttp.readyState == 4) {
-     if(xmlhttp.status == 200) {		 	
-     var result_txt =xmlhttp.responseText; //Update the HTML Form element 
-		 if (result_txt == "Success")
-		 {
-			alert (result_txt);
-			//document.getElementById("txtpost").value='';
-				
-		 }
-     }
-     else {
-        alert("Error during AJAX call. Please try again");
-     }
-   }
-}
-
-//end of code to update profile data
-
-
+//popup image upload
 function startUpload(){
-      document.getElementById('f1_upload_process').style.visibility = 'visible';
-      document.getElementById('f1_upload_form').style.visibility = 'hidden';
-      return true;
-	}
+	 document.getElementById('f1_upload_process').style.visibility = 'visible';
+     document.getElementById('f1_upload_form').style.visibility = 'hidden';
+	 return true;
+}
 	
-	function stopUpload(success){
-      var result = '';
+function stopUpload(success){
+	  var result = '';
       if (success == 1){
          result = '<span class="msg">The file was uploaded successfully!<\/span><br/><br/>';
       }
@@ -122,10 +75,42 @@ function startUpload(){
       return true;   
 }
 
-
-
 function enable_pop_up_div()
 {	
 	$('#popup-wrapper').css("display","block");
 	$('#popup-wrapper').modalPopLite({ openButton: '#clicker', closeButton: '#close-btn', isModal: true });
 }
+
+function fnprof_refresh()
+{
+	$('#infoeditdis').load("edit_profile.php");
+}
+
+function fnuploadimage()
+{
+	if ($('#userphotos').val() == "")
+	{
+		alert ("Plz choose a file");
+	}
+	else 
+	{		
+	  var val1=$(field1).val();
+	  var datastring="id="+id_val;
+	  $.ajax({
+	  type:"POST",
+	  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+	  url:path,
+	  data:datastring,
+	  success:function(result){
+	  },
+	  error: function(data){
+	  }
+	  });
+  }
+}
+
+function fnloadprofile()
+{
+	$('#photos').load("profile.php #photos");
+}
+//end of popup image upload

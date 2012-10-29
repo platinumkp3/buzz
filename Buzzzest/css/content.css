@@ -72,3 +72,16 @@
 	border-bottom:1px solid #999;
 
 }
+
+#upphoto
+{
+	margin-top:2%;
+	display:block;
+	float:left;
+	margin-left:1%;
+	border-bottom:1px solid #999;
+	width:100%;
+	min-height:50px;
+	height:50%;
+	
+}

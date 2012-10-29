@@ -37,11 +37,11 @@ if ($num_info > 0)
 	else 
 	{
 		if ($UGENDER == 2) {
-			$userphoto="female.jpg";}
+			$userphoto="images/female.jpg";}
 		else if ($UGENDER == 1) {
-			$userphoto="male.jpg"; 
+			$userphoto="images/male.jpg"; 
 		}else {
-			$userphoto="";	
+			$userphoto="images/humanicon.jpg";	
 		}
 		
 	}
@@ -60,7 +60,7 @@ if ($num_info > 0)
 	?> 	<table width="90%" height="90%" cellpadding="0" cellspacing="0" align="left"  >
     <tr><td colspan="2"></td></tr>
 	<tr>
-    	<td width="30%" ><img src="images/<?php echo $userphoto; ?>" width="225" height="225"  /></td>
+    	<td width="30%" ><img src="<?php echo $userphoto; ?>" width="225" height="225"  /></td>
         <td width="70%">
         	<table width="90%" height="100%" cellpadding="0" cellspacing="0" align="left" >
             	<tr><td width="21%">Username </td><td width="79%"><?php echo $UNAME; ?></td></tr>

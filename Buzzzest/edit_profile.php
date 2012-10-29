@@ -37,15 +37,14 @@ if ($num_info > 0)
 	else 
 	{
 		if ($UGENDER == 2) {
-			$userphoto="female.jpg";}
+			$userphoto="images/female.jpg";}
 		else if ($UGENDER == 1) {
-			$userphoto="male.jpg"; 
+			$userphoto="images/male.jpg"; 
 		}else {
-			$userphoto="";	
+			$userphoto="images/humanicon.jpg";	
 		}
 		
-	}
-	
+	}	
 	$UDOB=$data_info['UDOB'];
 	$UPLACE=$data_info['UPLACE'];
 	$UDESCRIPTION=$data_info['UDESCRIPTION'];
@@ -76,29 +75,28 @@ div.error { display: none; }
 
 input {border: 1px solid black; }
 
-		#clicker
-		{
-			font-size:20px;
-			/*cursor:pointer;*/			
-		}
+#clicker
+{
+	font-size:20px;
+	/*cursor:pointer;*/			
+}
 
-		#popup-wrapper
-		{
-			width:500px;
-			height:300px;
-			background-color:#ccc;
-			padding:10px;
-			display : none;
-		}
+#popup-wrapper
+{
+	width:500px;
+	height:300px;
+	background-color:#ccc;
+	padding:10px;
+	display : none;
+}
 
-		#close_button
-		{
-			float:right;
-			height:10%;
-		}
+#close_button
+{
+	float:right;
+	height:10%;
+}
 
 </style>
-
 
 <script type="application/javascript">
 $(document).ready(function() {
@@ -169,44 +167,41 @@ function fnUpdateProfile()
 	
 }
 
-function fnimagechange()
-{
-	alert("upload code !!!");
-}
 
 
 
 </script>
-<form class="cmxform" id="commentForm" method="post" action="" onSubmit="fnUpdateProfile();return false;">
+
 <div id="popup-wrapper">
 		<div id="close_button"> <a href="" id="close-btn" align="right">
-        <img src="images/close1.jpg" width="30" height="30" > </a></div>
+        <img src="images/close1.jpg" width="30" height="30" onclick="fnprof_refresh();"> </a></div>
 		<br />
 	      <div id="container">
             <div id="header"><div id="header_left"></div>
             <div id="header_main">Upload Image</div><div id="header_right"></div></div>
             <div id="content">
-               <form action="upload.php" method="post" enctype="multipart/form-data" target="upload_target"
-                onsubmit="startUpload();" >
+               <form action="upload_profimage.php" method="post" enctype="multipart/form-data" 
+               target="upload_target"  onsubmit="startUpload();" >
              <p id="f1_upload_process">Loading...<br/><img src="images/loader.gif" /><br/></p>
              <p id="f1_upload_form" align="center"><br/>
                  <label>File:  
                       <input name="myfile" type="file" size="30" />
                  </label>
                  <label>
-                     <input type="submit" name="submitBtn" class="sbtn" value="Upload" />
+                     <input type="submit" name="submitBtn" class="sbtn" value="Upload" 
+                       />
                  </label>
              </p>                     
              <iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;">
              </iframe>
-               </form>
+
              </div>
          </div>
 	</div>
  	<table width="90%" height="90%" cellpadding="0" cellspacing="0" align="left" >
     <tr><td colspan="2"></td></tr>
 	<tr>
-    	<td width="30%" ><div id="clicker" onClick="enable_pop_up_div()"><img src="images/<?php echo $userphoto; ?>" width="225" height="225" /></div></td>
+    	<td width="30%" ><div id="clicker" onClick="enable_pop_up_div()"><img src="<?php echo $userphoto; ?>" width="225" height="225" /></div></td>
         <td width="70%">
         	<table width="97%" height="100%" cellpadding="0" cellspacing="0" align="left" >
             	     <tr><td width="34%">Username </td>
@@ -268,10 +263,7 @@ function fnimagechange()
      <tr><td colspan="2">
      <input class="submit" type="submit" value="Submit"/>
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <input type="button" value="Cancel" onclick="fninfodisable();"/></td></tr>
-     
-	
+     <input type="button" value="Cancel" onclick="fninfodisable();"/></td></tr>    
 </table>
 </form>
-
 <? }?>

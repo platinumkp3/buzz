@@ -9,8 +9,48 @@ $uname=$_SESSION['UNAME'];
 $uid=$_SESSION['UID'];
 ?>
 
+<!-- stylesheet for light box for photos in profile.page -->
+<link rel="stylesheet" type="text/css" href="css/lightbox/jquery.lightbox-0.5.css" />
+<!-- end of stylesheet -->    
+
+<!-- script for light box for photos in profile.page 
+<script type="text/javascript" src="js/lightbox/jquery.js"></script>-->
+<script type="text/javascript" src="js/lightbox/jquery.lightbox-0.5.js"></script>
+<!-- end of scripts -->  
+
+
 <script src="js/profile.js" type="application/javascript" >
 </script>
+
+<script type="text/javascript">
+
+    $(function() {
+        $('#gallery a').lightBox();
+    });
+</script>
+
+	<style type="text/css">
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+		width: 600px;
+	}
+	#gallery ul { list-style: none; }
+	#gallery ul li { display: inline; }
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { 
+		color: #fff; 
+	}
+	</style>
+
+
    <div class="sidebar1">
    <div  >
    <table width="100%" height="100%" cellpadding="0" cellspacing="0" id="tableborder" >
@@ -76,7 +116,39 @@ Blog
 </div> <!-- end of .blogs -->
 
 <div id="photos">  <!-- start of .photos -->
-photos
+<div id="upphoto" >
+<form action="upload_image.php">
+     <img id="preview" src="" width="100px" height="100px" />
+     <label>Upload a picture: <input id="imageUpload" type="file" name="image"/></label>
+      <input type="hidden" name="uploadedImg"></input>
+     <input type="submit" value="Save the picture"/>
+ </form>
+<!--
+<form method="post" name="frmuploadimage" action="upload_image.php"  enctype="multipart/form-data" target="gallery"
+ id="frmuploadimage" >
+  <input type="file" name="userphotos" id="userphotos" />
+  &nbsp;&nbsp;&nbsp;<input type="button" name="Upload" value="Upload" onclick="fnuploadimage();"   />
+</form>-->
+</div>
+<div id="gallery">
+    <ul>
+      
+       <?php  $count=1;
+        foreach(glob("uploads/".$uid."/*.{jpg,JPG,jpeg,JPEG,gif,GIF,png,PNG}", GLOB_BRACE) as $images)
+        { ?>
+          <li>
+            <a href="<? echo $images;?>" title="">
+                <img src="<? echo $images;?>" width="100" height="100" alt="" />
+            </a>
+        </li>
+        
+        <?php 
+		if($count%4==0)
+                echo "<ul>";
+            $count++; }?>
+    </ul>
+</div>
+
 </div>  <!-- end of .photos -->
 
 <div id="info">  <!-- start of .info -->
