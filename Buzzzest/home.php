@@ -4,9 +4,100 @@ include "includes/check_session.php";
 require "header.php";
 
 $uname=$_SESSION['UNAME'];
-
+$uid=$_SESSION['UID'];
 ?>
+<style type="text/css">
+#result {
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	/*
+	height:20px;
+	margin-bottom:10px;
+	background-color:#FFFF99;*/
+}
+#country{
+	padding:3px;
+	border:1px #CCC solid;
+	font-size:17px;
+}
+.suggestionsBox {
+	position: absolute;
+	margin: 5px 0px 0px 10px;
+/*	top:40px;
+		
+	border-top: 3px solid #000;*/
+	width: 100%;
+	padding:0px;
+	color:#000;
+}
+/*.suggestionList {
+	margin: 0px;
+	padding: 0px;
+}*/
+.suggestionList ul li {
+	
+	margin: 0px;
+	padding: 6px;
+	border-bottom:1px dotted #666;
+	cursor: pointer;
+}
+.suggestionListphotos ul li:hover {
+	/*background-color: #FC3;*/
+	color:#000;
+	list-style-type:none;
+}
+/*ul {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000;
+	padding:0;
+	margin:0;
+}*/
+
+.load{
+background-image:url(images/autosuggest/loader.gif);
+background-position:right;
+background-repeat:no-repeat;
+}
+
+#suggest {
+	position:relative;
+}
+
+</style>
+<script src="js/home.js" type="application/javascript" >
+</script>
+
+<script>
+function suggest(inputString){
+	var uid=$("#user_id").val();
+	if(inputString.length == 0) {
+		$('#suggestions').fadeOut();
+	} else {
+	$('#country').addClass('load');
+		$.post("autosuggest.php", {queryString: ""+inputString+"",uid: ""+uid+""}, function(data){
+			if(data.length >0) {
+				$('#suggestions').fadeIn();
+				$('#suggestionListphotos').html(data);
+				$('#country').removeClass('load');
+			}
+		});
+		
+		
+	}
+}
+
+function fill(thisValue) {
+	$('#country').val(thisValue);
+	//setTimeout("$('#suggestions').fadeOut();", 600);
+}
+
+</script>
+
+
   <div class="sidebar1">
+    <input type="hidden" id="user_id" value="<? echo $uid; ?>"/>
     <ul class="nav">
       <li><a href="#">Link one</a></li>
       <li><a href="#">Link two</a></li>
@@ -24,8 +115,10 @@ Anything to share?
 </form>
 </div>	
 <div id="homemenu">
-<a href="" >Updates</a>&nbsp;&nbsp;<a href="" >List</a>&nbsp;&nbsp;<a href="" >Friends</a>&nbsp;&nbsp;
-<a href="" >Following</a>
+<a href="#" onclick="fnchangehomediv('content_post')"; >Updates</a>&nbsp;&nbsp;
+<a href="#" onclick="fnchangehomediv('list')"; >List</a>&nbsp;&nbsp;
+<a href="#" onclick="fnchangehomediv('friends')"; >Friends</a>&nbsp;&nbsp;
+<a href="#" onclick="fnchangehomediv('following')"; >Following</a>
 </div>
 <div id="content_post">
 <table width="100%" height="100%" cellpadding="0" cellspacing="0" id="tableborder" >
@@ -41,6 +134,30 @@ Anything to share?
     </tr>
      
 </table>
+</div>
+
+<div id="list">
+list
+</div>
+
+<div id="friends">
+<div id="friendslist">
+ <form id="form" action="" onsubmit="fnsendFriendRequest(); return false">
+    <div id="suggest">Search friends: <br />
+      <input type="text" size="25" value="" id="country" onkeyup="suggest(this.value);" onblur="fill();" class="" />
+      <input type="submit" name="Send Friend Request" value="Send Friend Request"  />	
+      <div class="suggestionsBox" id="suggestions" style="display: none;"> 
+        <!--<div class="suggestionList" id="suggestionsList"> &nbsp; </div>-->
+        <br />
+        <div class="suggestionListphotos" id="suggestionListphotos"> </div>
+      </div>
+   </div>
+</form>
+</div>
+</div>
+
+<div id="following">
+following
 </div>
 
 

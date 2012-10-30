@@ -1,9 +1,7 @@
 <?php
-session_start();
-$uid=$_SESSION['UID'];
 // Script from http://coursesweb.net/ajax
 
- $savefolder = "uploads/".$uid;		// folder for upload
+$savefolder = 'imgs';		// folder for upload
 $max_size = 250;			// maxim size for image file, in KiloBytes
 
 // Allowed image types
@@ -24,11 +22,11 @@ if (isset ($_FILES['myfile'])) {
         $thefile = $savefolder . "/" . $_FILES['myfile']['name'];
         // if the file can`t be uploaded, return a message
         if (!move_uploaded_file ($_FILES['myfile']['tmp_name'], $thefile)) {
-          $rezultat = 'The file can`t be uploaded, try again'.$savefolder;
+          $rezultat = 'The file can`t be uploaded, try again';
         }
         else {
           // Return the img tag with uploaded image.
-          $rezultat = 1;
+          $rezultat = '<img src="'.$thefile.'" />';
           echo 'The image was successfully loaded';
         }
       }
@@ -40,7 +38,5 @@ if (isset ($_FILES['myfile'])) {
 
 // encode with 'urlencode()' the $rezultat and return it in 'onload', inside a BODY tag
 $rezultat = urlencode($rezultat);
+echo '<body onload="parent.doneloading(\''.$rezultat.'\')"></body>';
 ?>
-<script language="javascript" type="text/javascript">window.top.window.doneloading(<?php echo $result; ?>);</script>
-
-

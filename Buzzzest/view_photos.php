@@ -1,7 +1,6 @@
 <?php
 session_start();
 $uid=$_SESSION['UID'];
-include "includes/check_session.php";
 include "db/common_db.php";
 $linkid=db_connect();
 $select_info="select 
@@ -167,9 +166,6 @@ function fnUpdateProfile()
 	});
 	
 }
-
-
-
 
 </script>
 

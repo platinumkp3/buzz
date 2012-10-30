@@ -9,47 +9,15 @@ $uname=$_SESSION['UNAME'];
 $uid=$_SESSION['UID'];
 ?>
 
-<!-- stylesheet for light box for photos in profile.page -->
-<link rel="stylesheet" type="text/css" href="css/lightbox/jquery.lightbox-0.5.css" />
-<!-- end of stylesheet -->    
-
-<!-- script for light box for photos in profile.page 
-<script type="text/javascript" src="js/lightbox/jquery.js"></script>-->
-<script type="text/javascript" src="js/lightbox/jquery.lightbox-0.5.js"></script>
-<!-- end of scripts -->  
-
 
 <script src="js/profile.js" type="application/javascript" >
 </script>
 
-<script type="text/javascript">
 
-    $(function() {
-        $('#gallery a').lightBox();
-    });
-</script>
-
-	<style type="text/css">
-	/* jQuery lightBox plugin - Gallery style */
-	#gallery {
-		width: 600px;
-	}
-	#gallery ul { list-style: none; }
-	#gallery ul li { display: inline; }
-	#gallery ul img {
-		border: 5px solid #3e3e3e;
-		border-width: 5px 5px 20px;
-	}
-	#gallery ul a:hover img {
-		border: 5px solid #fff;
-		border-width: 5px 5px 20px;
-		color: #fff;
-	}
-	#gallery ul a:hover { 
-		color: #fff; 
-	}
-	</style>
-
+<style type="text/css">
+  #uploadframe { display:none; }
+</style>
+<script type="text/javascript" src="js/upload.js"></script>
 
    <div class="sidebar1">
    <div  >
@@ -62,13 +30,10 @@ $uid=$_SESSION['UID'];
     <tr><td colspan="4" align="left"><h3><?php echo $uname; ?></h3></td></tr>
      <tr id="trbordertop"><td width="24%" id="tdborderlefttop" >Updates</td><td width="26%" id="tdbordertop" >Friends</td><td width="31%" id="tdbordertop" >Followings</td><td width="19%" id="tdborderrighttop" >Followers</td></tr>
      <tr><td id="tdborderleftbottom">&nbsp;</td><td id="tdborderbottom" >&nbsp;</td><td id="tdborderbottom" >&nbsp;</td><td id="tdborderrightbottom">&nbsp;</td></tr>
-    </table>
-   
+    </table>   
     </td>
-    </tr>
-    
-   
-</table>
+    </tr>    
+	</table>
    </div>
    
    <div id="content_postright">
@@ -95,58 +60,35 @@ $uid=$_SESSION['UID'];
    <a href="#" onclick="fnchangediv('qanda')"; >Q & A</a>&nbsp;&nbsp;
    <a href="#" onclick="fnchangediv('photos')"; >Photos</a></div>
   
-   <div id="content_post"> <!-- start of .content_post -->
-   <table width="100%" height="100%" cellpadding="0" cellspacing="0" id="tableborder" >
-	<tr>
-    <td width="15%">&nbsp;</td><td width="85%"><b><?php echo $uname;?></b></td><td width="2%"><img src="images/valid.png"  /></td>
-    </tr>
-    <tr>
-    <td valign="top"><img src="images/bee2.gif"  width="60" height="60"  /></td><td colspan="2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </td>
-    </tr>
-     <tr>
-    <td>&nbsp;</td><td colspan="2">3 hours ago .<a href="">Like</a>.<a href="">Comment</a>.<a href="">Share</a>.
-    <a href="">Delete</a> </td>
-    </tr>
-     
-</table>
-</div> <!-- end of .content_post -->
+   <div id="content_post"> <!-- start of .content_post/update link -->
+   <form name="frmuserpost" id="frmuserpost" action="" method="post" onSubmit="fnUpdatePost(); return false">
+      <div id="homemenu" >
+        <textarea name="txtuserpost" id="txtuserpost"  rows="2" cols="60" ></textarea>
+        <input type="submit" name="Post" value="Post" />    
+      </div>
+   </form>
+	<div id="content_userpost">
+    </div>
+   </div> <!-- end of .content_post /update link-->
 
 <div id="blogs"> <!-- start of .blogs -->
 Blog
 </div> <!-- end of .blogs -->
 
 <div id="photos">  <!-- start of .photos -->
-<div id="upphoto" >
-<form action="upload_image.php">
-     <img id="preview" src="" width="100px" height="100px" />
-     <label>Upload a picture: <input id="imageUpload" type="file" name="image"/></label>
-      <input type="hidden" name="uploadedImg"></input>
-     <input type="submit" value="Save the picture"/>
- </form>
-<!--
-<form method="post" name="frmuploadimage" action="upload_image.php"  enctype="multipart/form-data" target="gallery"
- id="frmuploadimage" >
-  <input type="file" name="userphotos" id="userphotos" />
-  &nbsp;&nbsp;&nbsp;<input type="button" name="Upload" value="Upload" onclick="fnuploadimage();"   />
-</form>-->
+<div id="upphoto">
+<form id="uploadform" action="upload_image.php" method="post" enctype="multipart/form-data" target="uploadframe" onsubmit="uploadimg(this); return false">
+  <input type="file" id="myfile" name="myfile" />
+  <input type="submit" value="Submit" />
+  <iframe id="uploadframe" name="uploadframe" src="upload_image.php" width="8" height="8" scrolling="no" frameborder="0"></iframe>
+</form>
+	
 </div>
+<br />
+
+<div id="showimg"> </div>
 <div id="gallery">
-    <ul>
-      
-       <?php  $count=1;
-        foreach(glob("uploads/".$uid."/*.{jpg,JPG,jpeg,JPEG,gif,GIF,png,PNG}", GLOB_BRACE) as $images)
-        { ?>
-          <li>
-            <a href="<? echo $images;?>" title="">
-                <img src="<? echo $images;?>" width="100" height="100" alt="" />
-            </a>
-        </li>
-        
-        <?php 
-		if($count%4==0)
-                echo "<ul>";
-            $count++; }?>
-    </ul>
+   
 </div>
 
 </div>  <!-- end of .photos -->

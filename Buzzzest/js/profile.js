@@ -13,6 +13,7 @@ $(document).ready(function() {
    $("#qanda").css("display","none");
    $('#infoeditdis').css("display","none");
    $('#popup-wrapper').css("display","none");	
+   $('#content_userpost').load('user_profile_post.php');
    
  });
  
@@ -23,6 +24,14 @@ function fnchangediv(stringval)
 	   $('#infoedit').css("display","block");
 	   $('#infoeditdis').css("display","none");
 	   $("#infoedit").load("view_profile.php");
+	}
+	if (stringval == "photos")
+	{
+		$('#gallery').load('gallery.php');
+	}
+	if (stringval == "content_post")
+	{
+		$('#content_userpost').load('user_profile_post.php');
 	}
    $('#photos').hide("");	
    $('#blogs').hide("");	
@@ -81,6 +90,12 @@ function enable_pop_up_div()
 	$('#popup-wrapper').modalPopLite({ openButton: '#clicker', closeButton: '#close-btn', isModal: true });
 }
 
+function enable_pop_up_divimage()
+{	
+	$('#popup-wrapper').css("display","block");
+	$('#popup-wrapper').modalPopLite({ openButton: '#clickerimage', closeButton: '#close-btnimage', isModal: true });
+}
+
 function fnprof_refresh()
 {
 	$('#infoeditdis').load("edit_profile.php");
@@ -109,8 +124,26 @@ function fnuploadimage()
   }
 }
 
-function fnloadprofile()
+
+function fnUpdatePost()
 {
-	$('#photos').load("profile.php #photos");
+	var post_value=jQuery.trim($('#txtuserpost').val());
+	if (post_value != "" || post_value.match(/(\w+\s)*\w+[.?!]/) )
+	{
+		url='saveuser_post.php';
+		data=new Object();
+		data['txtuserpost']=$('#txtuserpost').val();
+		$.ajax({
+		  type: 'POST', // type of request either Get or Post
+		  url: url, // Url of the page where to post data and receive response 
+		  data: data, // data to be post
+		  success: function(data){ 
+			 alert (data);
+		 	 $('#content_userpost').load('user_profile_post.php');	
+		  } //function to be called on successful reply from server
+		});
+	}
 }
+
+
 //end of popup image upload
