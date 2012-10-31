@@ -63,38 +63,7 @@ function fninfodisable()
   $("#infoedit").load("view_profile.php");
 }
 
-//popup image upload
-function startUpload(){
-	 document.getElementById('f1_upload_process').style.visibility = 'visible';
-     document.getElementById('f1_upload_form').style.visibility = 'hidden';
-	 return true;
-}
-	
-function stopUpload(success){
-	  var result = '';
-      if (success == 1){
-         result = '<span class="msg">The file was uploaded successfully!<\/span><br/><br/>';
-      }
-      else {
-         result = '<span class="emsg">There was an error during file upload!<\/span><br/><br/>';
-      }
-      document.getElementById('f1_upload_process').style.visibility = 'hidden';
-      document.getElementById('f1_upload_form').innerHTML = result + '<label>File: <input name="myfile" type="file" size="30" /><\/label><label><input type="submit" name="submitBtn" class="sbtn" value="Upload" /><\/label>';
-      document.getElementById('f1_upload_form').style.visibility = 'visible';      
-      return true;   
-}
 
-function enable_pop_up_div()
-{	
-	$('#popup-wrapper').css("display","block");
-	$('#popup-wrapper').modalPopLite({ openButton: '#clicker', closeButton: '#close-btn', isModal: true });
-}
-
-function enable_pop_up_divimage()
-{	
-	$('#popup-wrapper').css("display","block");
-	$('#popup-wrapper').modalPopLite({ openButton: '#clickerimage', closeButton: '#close-btnimage', isModal: true });
-}
 
 function fnprof_refresh()
 {

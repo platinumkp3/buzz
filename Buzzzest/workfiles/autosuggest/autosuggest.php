@@ -17,11 +17,11 @@ $uid=$_SESSION['UID'];
 						$uphoto=$data_query['UPHOTO'];
 						if ($uphoto != "")
 						{
-							$userphoto=$uphoto;
+							$userphoto="../".$uphoto;
 						}
 						else 
 						{
-							$userphoto="images/humanicon.jpg";
+							$userphoto="../images/humanicon.jpg";
 						}
 					echo '<li onClick="fill(\''.addslashes($username).'\');">'.$username.'</li>';
 				}

@@ -30,17 +30,17 @@ function fnsendFriendRequest()
 	var post_value=jQuery.trim($('#country').val());
 	if (post_value != "" )
 	{
-		/*url='send_friendrequest.php';
+		url='send_friendrequest.php';
 		data=new Object();
-		data['country']=$('#country').val();
+		data['user_name']=post_value;
 		$.ajax({
 		  type: 'POST', // type of request either Get or Post
 		  url: url, // Url of the page where to post data and receive response 
 		  data: data, // data to be post
 		  success: function(data){ 
 			 alert (data);
-		 	 $('#content_userpost').load('user_profile_post.php');	
+		 	 //$('#content_userpost').load('user_profile_post.php');	
 		  } //function to be called on successful reply from server
-		});*/
+		});
 	}
 }

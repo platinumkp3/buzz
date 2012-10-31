@@ -19,7 +19,7 @@ if ($num > 0)
 	 $_SESSION['UID']=$uid;
 	 $_SESSION['UNAME']=$username;
 
-	header("location:home.php");
+	header("location:home/home.php");
 }
 else 
 {
