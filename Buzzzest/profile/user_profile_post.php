@@ -38,11 +38,7 @@ if ($num_select > 0)
 		if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
 		$curtime=date('Y-m-d H:i:s');
 		
-		if ($curdate == $POSTDATE)
-		{
-			
-		}
-
+		
 //////////////////////////////////////////////////////// 
 // Short version, compare with current time 
 
